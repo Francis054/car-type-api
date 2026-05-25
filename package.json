@@ -1,0 +1,17 @@
+{
+  "name": "car-type-api",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Francis Dey",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "index.js",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
