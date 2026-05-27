@@ -10,6 +10,3 @@ app.get("/car", (req, res) => {
   res.send(cars);
 });
 
-app.listen(9000, () => {
-  console.log("Server running on port 3000");
-});
