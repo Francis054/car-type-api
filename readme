@@ -1,0 +1,108 @@
+Problem: Car Rental Management System
+
+Imagine a local car rental company is still using spreadsheets and WhatsApp messages to track cars and customers. They want a backend API to manage everything.
+
+The Problem
+
+The company needs a system that can:
+
+Store all cars in the fleet.
+Track whether a car is available, rented, or under maintenance.
+Store customer information.
+Allow customers to rent cars.
+Record when cars are returned.
+Generate reports of active rentals.
+Main Entities
+
+Car
+{
+    make: "Toyota",
+    model: "Corolla",
+    year: 2022,
+    plateNumber: "AS-1234-25",
+    dailyRate: 150,
+    status: "available"
+}
+Customer
+{
+    name: "John Doe",
+    email: "john@gmail.com",
+    phone: "0240000000",
+    licenseNumber: "DL123456"
+}
+Rental
+{
+    customerId: "...",
+    carId: "...",
+    startDate: "2026-05-31",
+    endDate: "2026-06-05",
+    totalCost: 750,
+    status: "active"
+}
+API Requirements
+Cars
+
+Create Car
+
+POST /api/cars
+
+Get All Cars
+
+GET /api/cars
+
+Get Single Car
+
+GET /api/cars/:id
+
+Update Car
+
+PATCH /api/cars/:id
+
+Delete Car
+
+DELETE /api/cars/:id
+Customers
+
+Create Customer
+
+POST /api/customers
+
+Get Customers
+
+GET /api/customers
+
+Get One Customer
+
+GET /api/customers/:id
+Rentals
+
+Rent a Car
+
+POST /api/rentals
+
+Request Body
+
+{
+    "customerId": "...",
+    "carId": "...",
+    "days": 5
+}
+
+Business Rules:
+
+Car must exist.
+Customer must exist.
+Car status must be available.
+Calculate total cost automatically.
+Change car status to rented.
+
+Return a Car
+
+POST /api/rentals/:id/return
+
+Business Rules:
+
+Rental must exist.
+Rental must be active.
+Change rental status to returned.
+Change car status to available.

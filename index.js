@@ -1,12 +1,13 @@
-const fs = require('fs')
-const express = require("express");
-
+// const fs = require('fs')
+import express from "express";
+import carRoute from "./route/carRoute.js";
 const app = express();
+app.use(express.json());
+app.use((req,res,next) =>{
+    console.log(req.path)
+    next()
+})
 
-const data = fs.readFileSync("cars.json", "utf8");
+app.use("/api/v1/cars", carRoute);
 
-const cars = JSON.parse(data);
-app.get("/car", (req, res) => {
-  res.send(cars);
-});
-
+export default app;
